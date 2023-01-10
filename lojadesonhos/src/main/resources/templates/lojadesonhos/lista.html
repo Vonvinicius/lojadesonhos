@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Loja de Sonhos</title>
+</head>
+<body>
+
+	<div th:replace="~{menu :: menu}"></div>
+
+	<div class="container">
+
+
+
+		<h1>Lista de Pedidos</h1>
+		<table>
+
+			<thead>
+
+				<tr>
+					<th>Id</th>
+					<th>Cliente</th>
+					<th>Valor</th>
+					<th>Recheio</th>
+					<th>Data</th>
+					<th>Horário</th>
+					<th></th>
+				</tr>
+
+			</thead>
+			<tbody>
+				<tr th:each="l : ${lojadesonhos}">
+					<td th:text="${l.id}">1</td>
+					<td><a th:href="@{/lojadesonhos/{id}(id=${l.id})}"><span th:text="${l.cliente}">Igor</span></td></a>
+					<td th:text="${l.valor}">2,50</td>
+					<td th:text="${l.recheio}">Chocolate</td>
+					<td th:text="${l.dataCompra}">21/01/2022</td>
+					<td th:text="${l.horarioCompra}">14:14</td>
+					<td><a th:href="@{/lojadesonhos/{id}/remover(id=${l.id})}">Deletar</td></a>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

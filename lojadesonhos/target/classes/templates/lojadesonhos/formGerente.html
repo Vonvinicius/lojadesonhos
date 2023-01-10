@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Loja de Sonhos</title>
+</head>
+<body>
+	<div th:replace="~{menu :: menu}"></div>
+
+	<div class="Login-Form">
+		<div class="container">
+			<div class="main-div">
+				<div class="texto-header">
+					<h2>Gerente Login</h2>
+					<p>Insira seus dados para realizar o login.</p>
+				</div>
+			
+	
+				<form method="post" th:object="${gerente}" action="salvarGerente">
+				
+					<div class="form-group">
+						<input type="email" class="form-control" th:field="*{email}" placeholder="E-mail">
+					</div>
+				
+					<div class="form-group">
+						<input type="text" class="form-control" th:field="*{usuario}" placeholder="Nome de usuário">
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control" th:field="*{senha}" placeholder="Senha">
+					</div>
+					
+					<button class="btn waves-effect waves-light pink lighten-4" type="submit">Login</button>
+					<a th:href="@{/lojadesonhos}"><button class="btn waves-effect waves-light pink lighten-4" type="button">Voltar</button></a>
+
+				</form>
+
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+</body>
+</html>

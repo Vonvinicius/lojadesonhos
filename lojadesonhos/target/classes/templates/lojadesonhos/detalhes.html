@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Loja de Sonhos</title>
+</head>
+<body>
+
+	<div th:replace="~{menu :: menu}"></div>
+
+	<div class="container">
+
+
+
+		<h1>Detalhes do Pedido</h1>
+
+		<div class="row">
+			<div class="col s12">
+				<div class="card-panel teal">
+					<span class="white-text"> <span class="card-title"><strong>Pedido</strong></span>
+						<p>
+							<strong>Id: <span th:text="${lojadesonhos.id}">1</span></strong>
+						</p>
+						<p>
+							<strong>Cliente: <span th:text="${lojadesonhos.cliente}">Igor</span></strong>
+						</p>
+						<p>
+							<strong>Valor: <span th:text="${lojadesonhos.valor}">2,50</span></strong>
+						</p>
+						<p>
+							<strong>Recheio: <span th:text="${lojadesonhos.recheio}">Chocolate</span></strong>
+						</p>
+						<p>
+							<strong>Data: <span th:text="${lojadesonhos.dataCompra}">21/01/2022</span></strong>
+						</p>
+						<p>
+							<strong>Horário: <span th:text="${lojadesonhos.horarioCompra}">14:14</span></strong>
+						</p>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
